@@ -22,6 +22,7 @@ export default class Game extends React.PureComponent {
       if (this.state.value) {
       this.props.userGuess(this.state.value)
       }
+      this.state.value = ""
       event.preventDefault();
     }
 
