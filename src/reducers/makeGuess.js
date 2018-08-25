@@ -1,4 +1,4 @@
-import { MAKE_GUESS } from "../actions/game";
+import { MAKE_GUESS, CLEAR_GUESS } from "../actions/game";
 
 export default (state = [], action = {}) => {
   switch(action.type) {
@@ -7,7 +7,8 @@ export default (state = [], action = {}) => {
         ...state,
         action.payload
       ]
-    
+    case CLEAR_GUESS:
+      return action.payload
     default:
       return state
   }

@@ -27,6 +27,7 @@ export default class Game extends React.PureComponent {
 
     handleNewGame() {
        this.props.newGame()
+       this.props.clear()
     }
     render() {
       return (

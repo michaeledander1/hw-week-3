@@ -18,3 +18,12 @@ export function makeGuess(letter) {
     payload: letter
   }
 }
+
+export const CLEAR_GUESS = 'CLEAR_GUESS'
+
+export function clearGuess() {
+    return {
+        type: CLEAR_GUESS,
+        payload: []
+    }
+}

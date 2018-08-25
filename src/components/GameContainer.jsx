@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Game from './Game'
 import {connect} from 'react-redux'
-import { newGame, makeGuess } from '../actions/game';
+import { newGame, makeGuess, clearGuess } from '../actions/game';
 import {  showGuess, wrongGuessCount, wrongGuessLimit, isWinner, gameFinished } from '../lib/game'
 
 class GameContainer extends React.PureComponent {
@@ -12,15 +12,17 @@ class GameContainer extends React.PureComponent {
   }
 
   render() {
-    return <Game answer={this.props.game} guess={this.props.guess} userGuess={this.props.makeGuess} newGame={this.props.newGame} />
+    return <Game answer={this.props.game} guess={this.props.guess} 
+    userGuess={this.props.makeGuess} newGame={this.props.newGame}
+    clear={this.props.clearGuess} />
   }
 }
 
 const mapStateToProps = (state) => {
     return {
       game: state.newGame,
-      guess: state.makeGuess
+      guess: state.makeGuess,
     }
   }
 
-export default connect(mapStateToProps, {newGame, makeGuess})(GameContainer)
+export default connect(mapStateToProps, {newGame, makeGuess, clearGuess})(GameContainer)
