@@ -18,9 +18,12 @@ export default class Game extends React.PureComponent {
     }
     
     handleSubmit(event) {
+    //   if (this.props.checkGuess(this.state.value, this.props.guess)) {      Alert kept resetting my states for some reason, so
+    //     return alert('You have already picked this letter. Please pick another.')}   I couldn't implement this feature 
       if (this.state.value) {
       this.props.userGuess(this.state.value)
-      } this.setState({value: ''})
+      this.setState({value: ''})
+      }
       event.preventDefault();
     }
 

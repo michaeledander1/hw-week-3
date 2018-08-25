@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import WelcomePageContainer from './components/WelcomePageContainer';
 import { Route } from 'react-router-dom';
 import GameContainer from './components/GameContainer';
+import TheHistory from './components/TheHistory'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
       <div>
       <Route exact path="/" component={WelcomePageContainer} />
       <Route exact path="/hangman" component={GameContainer} />
+      <Route exact path="/history" component={TheHistory} />
       </div>
       </Provider>
     );

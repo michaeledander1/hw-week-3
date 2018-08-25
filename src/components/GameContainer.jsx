@@ -17,9 +17,10 @@ const winnerMessage = (word, answer) => {
     } 
 }
 
-const checkGuess = (guess, guessedLetters) => {
-    return guessedLetters.includes(guess)
-}
+// const checkGuess = (guess, guessedLetters) => {  Alert kept resetting my states for some reason I couldn't implement 
+//     return guessedLetters.includes(guess)         this feature. Right now it is possible to guess the same letter incorrectly, 
+//                                                    multiple times if it is done consecutively
+// }
 
 const gameIsDone = (word, answer) => {
     if (gameFinished(word, answer)) {
@@ -41,7 +42,7 @@ class GameContainer extends React.PureComponent {
     return <Game answer={this.props.game} guess={this.props.guess} 
     userGuess={this.props.makeGuess} newGame={this.props.newGame}
     clear={this.props.clearGuess} winnerMessage={winnerMessage} gameIsDone={gameIsDone}
-    checkGuess={checkGuess} />
+    /*checkGuess={checkGuess}*/ />
   }
 }
 
