@@ -1,14 +1,20 @@
 import * as React from 'react'
+import {  showGuess, wrongGuessCount, wrongGuessLimit, isWinner, gameFinished } from '../lib/game'
+
+
 
 export default function Game(props) {
-  return (
+    
+    console.log(props.guess)
+    return (
     <div>
       <h1>Time to play!</h1>
       <label>
-        Guess:
+        Guess 1 letter:
         <input type="text" name="guess" /*value={} onChange={}*/ />
       </label>
-      <button type="submit">Add</button><br/>
+      <button type="submit">Submit</button><br/>
+      <h2>Guesses: {showGuess(props.answer, props.guess)}</h2>
       <button type="button">New Game</button>
     </div>
   )

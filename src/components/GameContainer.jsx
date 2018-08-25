@@ -4,24 +4,22 @@ import {connect} from 'react-redux'
 import { newGame, makeGuess } from '../actions/game';
 import {  showGuess, wrongGuessCount, wrongGuessLimit, isWinner, gameFinished } from '../lib/game'
 
-
-
 class GameContainer extends React.PureComponent {
-
+  
   componentDidMount() {
-    const answer = this.props.newGame()
-    this.props.makeGuess('e')
+   this.props.newGame()
+ 
   }
 
   render() {
-    return <Game />
+    return <Game answer={this.props.game} guess={this.props.guess} />
   }
 }
 
 const mapStateToProps = (state) => {
     return {
       game: state.newGame,
-      makeGuess: state.makeGuess
+      guess: state.makeGuess
     }
   }
 
