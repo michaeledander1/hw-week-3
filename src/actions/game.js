@@ -11,9 +11,9 @@ export function newGame() {
 
 export const MAKE_GUESS = 'MAKE_GUESS'
 
-export function makeGuess() {
+export function makeGuess(letter) {
   return {
     type: MAKE_GUESS,
-    payload: []
+    payload: letter
   }
 }
