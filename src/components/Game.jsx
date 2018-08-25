@@ -30,6 +30,7 @@ export default class Game extends React.PureComponent {
        this.props.newGame()
        this.props.clear()
     }
+    
     render() {
       return (
       <div>
@@ -40,33 +41,13 @@ export default class Game extends React.PureComponent {
             <input type="text" maxLength="1" value={this.state.value} onChange={this.handleChange}/>
           </label>
           <input type="submit" value="Submit" />
-        </form>
-        <br/>
+        </form><br/>
         <h2>Guesses: {showGuess(this.props.answer, this.props.guess)}</h2><br/>
-        <h3>Wrong Guesses: {wrongGuessCount(this.props.answer, this.props.guess)}</h3>
+        <h3>Wrong Guesses: {wrongGuessCount(this.props.answer, this.props.guess)}</h3><br/>
+        <h3>{this.props.winnerMessage(this.props.answer, this.props.guess)}<br/>
+          {this.props.gameIsDone(this.props.answer, this.props.guess)}</h3>
         <button type="button" onClick={this.handleNewGame}>New Game</button>
       </div>
       )
     }
 }
-// handleSubmit = (event) => {
-//     event.preventDefault()
-//     if (this.state.title) {
-//       this.props.createAlbum(this.state.title)
-//     }
-//   }
-
-//   handleChange = (e) => {
-//     this.setState({ [e.target.name]: e.target.value })
-//   }
-
-//   render() {
-//     return (<form onSubmit={this.handleSubmit}>
-//       <label>
-//         Title:
-//         <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
-//       </label>
-//       <button type="submit">Add</button>
-//     </form>)
-//   }
-// }
