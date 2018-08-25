@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {  showGuess, wrongGuessCount, wrongGuessLimit, isWinner, gameFinished } from '../lib/game'
+import {  showGuess, wrongGuessCount } from '../lib/game'
 
 
 
@@ -15,14 +15,12 @@ export default class Game extends React.PureComponent {
     
     handleChange(event) {
       this.setState({value: event.target.value});
-      
     }
     
     handleSubmit(event) {
       if (this.state.value) {
       this.props.userGuess(this.state.value)
-      }
-      this.state.value = ""
+      } this.setState({value: ''})
       event.preventDefault();
     }
 
@@ -42,8 +40,9 @@ export default class Game extends React.PureComponent {
           </label>
           <input type="submit" value="Submit" />
         </form><br/>
-        <h2>Guesses: {showGuess(this.props.answer, this.props.guess)}</h2><br/>
-        <h3>Wrong Guesses: {wrongGuessCount(this.props.answer, this.props.guess)}</h3><br/>
+        <h2>Word: {showGuess(this.props.answer, this.props.guess)} </h2><br/>
+        <h3>Wrong Guesses: {wrongGuessCount(this.props.answer, this.props.guess)} <br/>
+          Guesses: {this.props.guess.join(',')}</h3><br/>
         <h3>{this.props.winnerMessage(this.props.answer, this.props.guess)}<br/>
           {this.props.gameIsDone(this.props.answer, this.props.guess)}</h3>
         <button type="button" onClick={this.handleNewGame}>New Game</button>

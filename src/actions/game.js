@@ -1,4 +1,4 @@
-import { randomWord, showGuess, wrongGuessCount, wrongGuessLimit, isWinner, gameFinished } from '../lib/game'
+import { randomWord } from '../lib/game'
 
 export const NEW_GAME = 'NEW_GAME'
 
