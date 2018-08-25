@@ -5,14 +5,14 @@ import { newGame, makeGuess } from '../actions/game';
 import {  showGuess, wrongGuessCount, wrongGuessLimit, isWinner, gameFinished } from '../lib/game'
 
 class GameContainer extends React.PureComponent {
-  
+
   componentDidMount() {
    this.props.newGame()
  
   }
 
   render() {
-    return <Game answer={this.props.game} guess={this.props.guess} />
+    return <Game answer={this.props.game} guess={this.props.guess} userGuess={this.props.makeGuess} />
   }
 }
 

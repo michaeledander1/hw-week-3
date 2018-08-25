@@ -6,6 +6,7 @@ export function newGame() {
   return {
     type: NEW_GAME,
     payload: randomWord()
+    
   }
 }
 
