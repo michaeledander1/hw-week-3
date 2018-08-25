@@ -12,7 +12,7 @@ class GameContainer extends React.PureComponent {
   }
 
   render() {
-    return <Game answer={this.props.game} guess={this.props.guess} userGuess={this.props.makeGuess} />
+    return <Game answer={this.props.game} guess={this.props.guess} userGuess={this.props.makeGuess} newGame={this.props.newGame} />
   }
 }
 

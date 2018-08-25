@@ -10,6 +10,7 @@ export default class Game extends React.PureComponent {
         
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleNewGame = this.handleNewGame.bind(this);
     }
     
     handleChange(event) {
@@ -23,6 +24,10 @@ export default class Game extends React.PureComponent {
       }
       event.preventDefault();
     }
+
+    handleNewGame() {
+       this.props.newGame()
+    }
     render() {
       return (
       <div>
@@ -30,14 +35,14 @@ export default class Game extends React.PureComponent {
         <form onSubmit={this.handleSubmit}>
           <label>
             Type 1 letter:
-            <input type="text" maxlength="1" value={this.state.value} onChange={this.handleChange}/>
+            <input type="text" maxLength="1" value={this.state.value} onChange={this.handleChange}/>
           </label>
           <input type="submit" value="Submit" />
         </form>
         <br/>
         <h2>Guesses: {showGuess(this.props.answer, this.props.guess)}</h2><br/>
         <h3>Wrong Guesses: {wrongGuessCount(this.props.answer, this.props.guess)}</h3>
-        <button type="button">New Game</button>
+        <button type="button" onClick={this.handleNewGame}>New Game</button>
       </div>
       )
     }
